@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    /* Saudi National Day Theme - Primary Saudi Green */
+    --primary: 140 100% 21%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 140 60% 40%;
+    --primary-lighter: 140 40% 85%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 140 100% 21%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 140 40% 85%;
+    --accent-foreground: 140 100% 21%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 140 100% 21%;
+
+    /* Chat Theme Colors */
+    --chat-user-bg: 0 0% 100%;
+    --chat-user-border: 140 100% 21%;
+    --chat-assistant-bg: 140 40% 85%;
+    --chat-assistant-text: 140 100% 15%;
+
+    /* Page Active Background */
+    --page-active-bg: 140 100% 21%;
+
+    /* Saudi Theme Gradients */
+    --gradient-saudi: linear-gradient(
+      135deg,
+      hsl(140 100% 21%),
+      hsl(140 60% 40%)
+    );
+    --gradient-light: linear-gradient(180deg, hsl(0 0% 100%), hsl(140 40% 98%));
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Dark Mode Saudi Theme */
+    --primary: 140 100% 21%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 140 60% 40%;
+    --primary-lighter: 140 40% 25%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 140 40% 25%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 140 100% 21%;
+
+    /* Dark Chat Colors */
+    --chat-user-bg: 217.2 32.6% 17.5%;
+    --chat-user-border: 140 100% 21%;
+    --chat-assistant-bg: 140 40% 25%;
+    --chat-assistant-text: 210 40% 98%;
+
+    --page-active-bg: 140 100% 21%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    direction: rtl;
+  }
+
+  [dir="rtl"] .rtl\:space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 1;
+  }
+
+  /* Saudi Flag Emoji Fallback */
+  .saudi-flag::before {
+    content: "🇸🇦";
+  }
+
+  .saudi-flag.fallback::before {
+    content: "🟢⚪";
+  }
+
+  /* Smooth animations */
+  * {
+    transition: color 0.2s ease, background-color 0.2s ease,
+      border-color 0.2s ease;
+  }
+}
+
+.flex-1.overflow-y-auto.p-6.space-y-4.bg-background\/50 {
+  background-color: white ;
+}
+
+.flex-1.flex.flex-col.overflow-hidden {
+  background-color: #006b24;
+}
